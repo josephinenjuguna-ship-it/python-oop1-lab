@@ -5,18 +5,18 @@ class Coffee:
         self.size = size
         self.price = price
 
-        @property
-        def size(self):
-            return self.size
+    @property
+    def size(self):
+            return self._size
 
-        @size.setter
-        def size(self, value):
-            if value is not ["Small", "Medium", "Large"]:
-                print("Size must be Small, Medium or Large")
+    @size.setter
+    def size(self, value):
+            if value not in ["Small", "Medium", "Large"]:
+                print("size must be Small, Medium, or Large")
             else:
-                self.size = value
-        def tip(self):
-            print("This coffee is great, here is a tip")
+                self._size = value
+    def tip(self):
+            print("This coffee is great, here’s a tip!")
             self.price +=1
 
     pass
